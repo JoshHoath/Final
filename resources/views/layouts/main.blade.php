@@ -17,7 +17,7 @@
                         <a class="nav-link" href="/profiles/{{Auth::id()}}">Profile</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Who to follow</a>
+                        <a class="nav-link" href="/who-to-follow">Who to follow</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/logout">Log Out</a>
@@ -29,4 +29,3 @@
         <script src="/js/app.js"></script>
     </body>
 </html>
-    
