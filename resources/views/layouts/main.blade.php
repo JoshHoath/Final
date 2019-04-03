@@ -20,6 +20,10 @@
                         <a class="nav-link" href="#">Who to follow</a>
                     </li>
                     <li class="nav-item active">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+
+                    <li class="nav-item active">
                         <a class="nav-link" href="/logout">Log Out</a>
                     </li>
                 </ul>
@@ -29,4 +33,3 @@
         <script src="/js/app.js"></script>
     </body>
 </html>
-    

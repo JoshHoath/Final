@@ -47,7 +47,7 @@ class CommentController extends Controller
     {
 
         $comment = new \App\Comment;
-        $comment->body = $request->get('body');
+        $comment->body = $request->get('comment_body');
         $comment->user_id = Auth::id();
         $comment->tweet_id = $id;
 
@@ -80,7 +80,7 @@ class CommentController extends Controller
     public function edit($tweet_id, $comment_id)
     {
         $comment = \App\Comment::find($comment_id);
-        return view('comments.edit' , compact('comment'));
+        return view('tweets.comments.edit' , compact('comment'));
     }
 
     /**
