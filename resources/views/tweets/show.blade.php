@@ -5,7 +5,7 @@
     <div class="row">
         @include('tweets._tweet')
     </div>
-    <div class="row">
+    <div class="row col-md-6 offset-3">
         @foreach($tweet->comments as $comment)
             @include('comments._comment')
         @endforeach

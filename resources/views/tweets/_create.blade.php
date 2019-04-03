@@ -6,7 +6,7 @@
             <textarea name="body"  class="form-control" placeholder="Let's see how funny you think you are"></textarea>
         </div>
         <div class="text-right">
-            <a class="btn btn-primary" href="/tweets">Tweet</a>
+            <button class="btn btn-primary" type="submit">Tweet</button>
         </div>
         <div class="form-group">
             @if($errors->any())

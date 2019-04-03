@@ -9,7 +9,7 @@ class Tweet extends Model
 {
 
     protected $fillable = ['body', 'user_id'];
-    protected $appends = ['is_liked'];
+    //protected $appends = ['is_liked'];
 
 
     public function user()
@@ -26,7 +26,7 @@ class Tweet extends Model
         return $this->morphToMany('App\User', 'likeable')->whereDeleteAt(null);
     }
     public function getIsLikedAttribute() {
-        $like = $this->likeS()->whereUserId(Auth::id())->first();
+        $like = $this->likes()->whereUserId(Auth::id())->first();
         return (!is_null($like)) ? true : false;
     }
 

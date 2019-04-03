@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', 'HomeController@index');
+Route::get('home', 'HomeController@home');
+Route::get('some', 'HomeController@some');
 Route::resource('tweets', 'TweetController');
 Route::post('/tweets/{tweet}/comments/{comment}/edit', 'CommentController@edit');
 Route::post('/tweets/{tweet}/comments', 'CommentController@store')->name('comment.add');
