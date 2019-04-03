@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Auth;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -36,6 +38,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $appends = ['following_user'];
+
     public function profile() {
         return $this->hasOne('App\Profile');
     }
@@ -59,5 +64,9 @@ class User extends Authenticatable
     }
     public function likedPosts() {
         return $this->morphedByMany('App\Tweet', 'likeable')->whereDeletedAt(null);
+    }
+
+    public function getFollowingUserAttribute() {
+        return $this->followers()->where('follower_id', Auth::id())->count();
     }
 }
