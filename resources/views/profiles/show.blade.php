@@ -4,6 +4,7 @@
         <div class="col-md-10 offset-1">
             <h1 class="panel-body text-left">
                 {{ $user->first_name }} {{ $user->last_name}}
+                @include('widgets._follow_user_button')
             </h1>
             <div class="col-md-8 text-panel">
                 <ul>
