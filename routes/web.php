@@ -29,8 +29,8 @@ Route::get('/likes/{like_id}/{like_type}','LikeController@handleLike');
 });
 
 Route::resource('/profiles', 'ProfileController');
-Route::get('/profiles/{profile}/following', 'ProfileController@following');
-Route::get('/profiles/{profile}/followers', 'ProfileController@followers');
+Route::get('/profiles/{user}/following', 'ProfileController@following');
+Route::get('/profiles/{user}/followers', 'ProfileController@followers');
 Route::get('/profiles' , function() {
     return redirect('/profile/' . Auth::id());
 });
