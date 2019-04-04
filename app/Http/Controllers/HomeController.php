@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('login');
     }
+    public function home()
+    {
+        return 'Home Page';
+    }
+    public function some()
+    {
+        return redirect('/');
+    }
 }

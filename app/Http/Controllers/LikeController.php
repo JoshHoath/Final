@@ -9,7 +9,7 @@ class LikeController extends Controller
 {
     public function handleLike($id, $type)
     {
-        if($type == 'tweet'){
+        if($type == 'tweets'){
             $type = ('App\Tweet');
         } else {
             $type = 'App\Comment';
@@ -23,6 +23,7 @@ class LikeController extends Controller
 
         if($like) {
             $like->delete();
+            return back();
         } else {
             $like = \App\Like::create([
                 'likeable_id'        => $id,
