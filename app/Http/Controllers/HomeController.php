@@ -31,6 +31,6 @@ class HomeController extends Controller
     }
     public function some()
     {
-        return \Redirect::to('/');
+        return redirect('/');
     }
 }
