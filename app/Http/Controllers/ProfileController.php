@@ -104,15 +104,17 @@ class ProfileController extends Controller
         //
     }
 
-    public function following()
+    public function following($id)
     {
-        $following = Auth::user()->following()->paginate(20);
+        $user = \App\User::find($id);
+        $following = $user->following()->paginate(20);
         return view('profiles.following', ['users' => $following]);
     }
 
-    public function followers()
+    public function followers($id)
     {
-        $followers = Auth::user()->followers()->paginate(20);
+        $user = \App\User::find($id);
+        $followers = $user->followers()->paginate(20);
         return view('profiles.followers', ['users' => $followers]);
     }
 
