@@ -10,30 +10,37 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index');
-Route::get('home', 'HomeController@home');
-Route::get('some', 'HomeController@some');
-Route::resource('tweets', 'TweetController');
-Route::post('/tweets/{tweet}/comments/{comment}/edit', 'CommentController@edit');
-Route::post('/tweets/{tweet}/comments', 'CommentController@store')->name('comment.add');
-Route::delete('/tweets/{tweet_id}/comments/{comment_id}', 'CommentController@destroy');
-Route::put('/tweets/{tweet}/comments/{comment}', 'CommentController@update');
-Route::get('/likes/{like_id}/{like_type}','LikeController@handleLike');
 
+Route:: middleware (['auth'])->group(function(){
 
-Route::resource('/profiles', 'ProfileController');
-Route::get('/profiles/{user}/following', 'ProfileController@following');
-Route::get('/profiles/{user}/followers', 'ProfileController@followers');
-Route::get('/profiles' , function() {
-    return redirect('/profile/' . Auth::id());
+    Route::get('/', function(){
+        return redirect('/tweets');
+    });
+  
+    Route::resource('tweets', 'TweetController');
+    Route::post('/tweets/{tweet}/comments/{comment}/edit', 'CommentController@edit');
+    Route::post('/tweets/{tweet}/comments', 'CommentController@store')->name('comment.add');
+    Route::delete('/tweets/{tweet_id}/comments/{comment_id}', 'CommentController@destroy');
+    Route::put('/tweets/{tweet}/comments/{comment}', 'CommentController@update');
+    Route::get('/likes/{like_id}/{like_type}','LikeController@handleLike');
+  
+    Route::resource('/profiles', 'ProfileController');
+    Route::get('/profiles/{user}/following', 'ProfileController@following');
+    Route::get('/profiles/{user}/followers', 'ProfileController@followers');
+    Route::get('/profiles' , function() {
+        return redirect('/profile/' . Auth::id());
+    });
+  
+    Route::get('/follow/{user}', 'ProfileController@follow');
+    Route::get('/unfollow/{user}', 'ProfileController@unfollow');
+    Route::get('/who-to-follow', 'ProfileController@suggest');
+  
+    Route::delete('/tweets/{tweet}' , 'TweetController@destory');
+
 });
-Route::get('/follow/{user}', 'ProfileController@follow');
-Route::get('/unfollow/{user}', 'ProfileController@unfollow');
-Route::get('/who-to-follow', 'ProfileController@suggest');
-
 
 Auth::routes();
-Route::delete('/tweets/{tweet}' , 'TweetController@destory');
+
 Route::get('/logout', function(){
     auth()->logout();
     return redirect('/login');
