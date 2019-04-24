@@ -1,4 +1,4 @@
-<div class="col-md-6 offset-3" onclick=location.href="/tweets/{{$tweet->id}}">
+<div class="col-md-6 offset-3">
     <div class="card-body text-left">
         <h5 class="card-header">{{ $tweet->user->username }}</h5>
         <h6 class="card-text">{{ $tweet->body }}</h6>
@@ -7,7 +7,14 @@
             <a href="/tweets/{{ $tweet->id }}/tweets/{{ $tweet->id }}/edit">Edit</a>
             @endif
         <div>
-            <a href="/likes/{{ $tweet->id }}/tweets">{{ ($tweet->is_liked ? 'Unlike' : 'Like' ) }}</a>
+            <like-button
+                :id= "{{ $tweet->id }}"
+                :liked="{{ ( $tweet->isLiked ? '1' : '0' )}}"
+                :type="'tweet'"
+                :count="{{ $tweet->likes()->count() }}"
+
+            ></like-button>
+            <br />
             <a href="/tweets/{{$tweet->id}}">Comment</a>
         </div>
         </div>

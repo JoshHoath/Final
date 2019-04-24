@@ -7,4 +7,7 @@
     @foreach ($tweets as $tweet)
         @include('tweets._tweet')
     @endforeach
+    <div class="profile">
+        @include('profiles._show')
+    </div>
 @endsection

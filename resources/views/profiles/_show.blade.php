@@ -3,15 +3,14 @@
     @section('content')
         <div class="col-md-10 offset-1">
             <h1 class="">
-                {{ $user->first_name }} {{ $user->last_name}}
-                @if(Auth::id() != $user->id)
-                @include('widgets._follow_user_button')
-                @endif
-
+                {{ $user->profile->first_name }} {{ $user->profile->last_name}}
+                    @if(Auth::id() != $user->id)
+                        @include('widgets._follow_user_button')
+                    @endif
             </h1>
             <div class="col-md-8 text-panel">
                 <ul>
-                    <li>Location: {{ $user->profile }}</li>
+                    <li>Location: {{ $user->profile->location }}</li>
                     <li>Bio: {{ $user->profile->bio }}</li>
                     <li>Birthday: {{ $user->profile->birthday }}</li>
                     <li>Website: {{ $user->profile->website }}</li>
