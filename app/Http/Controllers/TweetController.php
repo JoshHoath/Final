@@ -30,7 +30,11 @@ class TweetController extends Controller
                             ->whereIn('id', $following)
                             ->get();
 
-        return view('tweets.index' , compact('tweets'));
+        $user = Auth::user();
+
+
+
+        return view('tweets.index' , compact('tweets' , 'user'));
     }
 
     /**

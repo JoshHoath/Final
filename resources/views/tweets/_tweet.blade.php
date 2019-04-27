@@ -1,4 +1,4 @@
-<div class="col-md-6 offset-3">
+<div class="tweets col-md-6 offset-3">
     <div class="card-body text-left">
         <h5 class="card-header">{{ $tweet->user->username }}</h5>
         <h6 class="card-text">{{ $tweet->body }}</h6>
@@ -14,7 +14,6 @@
                 :count="{{ $tweet->likes()->count() }}"
 
             ></like-button>
-            <br />
             <a href="/tweets/{{$tweet->id}}">Comment</a>
         </div>
         </div>

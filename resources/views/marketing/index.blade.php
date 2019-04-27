@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
+        <link rel="stylesheet" href="css/tiltedpage-scroll.css">
         <link rel="stylesheet" href="css/app.css"/>
         <meta charset="utf-8">
         <title>Tweeter</title>
@@ -29,47 +30,42 @@
                 </ul>
             </div>
         </nav>
-        <div id="marketing-app">
-            <div class="container">
-                <div class="col-md-10 offset-1 text-center" id="title">
-                    <h1>Why Tweeter?</h1>
-                </div>
-                <div class="main">
-                    <section class="page1 tps-section">
-                        <div class="page_container">
-                            <img src="#">
-                            booty
-                        </div>
-                    </section>
-                    <section class="page2 tps-section">
-                        <div class="page_container">
-                            <img src="#">
-                            booty
-                        </div>
-                    </section>
-                    <section class="page3 tps-section">
-                        <div class="page_container">
-                            <img src="#">
-                            booty
-                        </div>
-                    </section>
-                    <section class="page4 tps-section">
-                        <div class="page_container">
-                            <img src="#">
-                            booty
-                        </div>
-                    </section>
-                    <section class="page5 tps-section">
-                        <div class="page_container">
-                            <img src="#">
-                            booty
-                        </div>
-                    </section>
-                </div>
-            </div>
+        <div class="title-container">
+            <h1 class="text-center title">Why Tweeter?</h1>
         </div>
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/jquery.tiltedpage-scroll.js"></script>
+            <div class="main">
+                <section class="page1">
+                    <div class="page_container">
+
+                    </div>
+                </section>
+                <section class="page2">
+                    <div class="page_container">
+
+                    </div>
+                </section>
+                <section class="page3">
+                    <div class="page_container">
+
+                    </div>
+                </section>
+                <section class="page4">
+                    <div class="page_container">
+
+                    </div>
+                </section>
+            </div>
         <script src="js/app.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".main").tiltedpage_scroll({
+                    sectionContainer: "> section",
+                    angle: 50,
+                    opacity: true,
+                    scale: true,
+                    outAnimation: true
+                });
+            });
+        </script>
     </body>
 </html>
