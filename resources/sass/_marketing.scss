@@ -1,0 +1,340 @@
+nav {
+    border-bottom-style: solid;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-width: 1px;
+}
+.first-panel {
+    background-color: $blue;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 60vh;
+
+    .title {
+        color: #d3d3d3;
+        padding-left: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        padding-right: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .header {
+        padding-left: 1rem;
+
+            .description {
+                color: #2f4f4f;
+                font-size: 2.75rem;
+            }
+    }
+}
+
+.second-panel {
+    height: 70vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/nightking.jpg');
+    background-size: 100% 100%;
+    background-position: center, center;
+    background-repeat: no-repeat;
+
+        .second-text {
+            text-align: center;
+            color: white;
+
+                h5 {
+                    padding-bottom: 1.5rem;
+                }
+
+                a {
+                    color: white;
+                }
+        }
+}
+.third-panel {
+    height: 70vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/news.jpeg');
+    background-size: 100% 100%;
+    background-position: center, center;
+
+        .third-box {
+            width: 20rem;
+            height: 7rem;
+            background-color: rgba(255, 255, 255, 0.7);
+
+                .third-text {
+                    color: black;
+                    font-weight: bold;
+                    text-align: center;
+
+                        h5 {
+                            padding-bottom: 2rem;
+                            padding-top: 0.5rem;
+                        }
+
+                        a {
+                            color: white;
+                        }
+                }
+        }
+}
+.fourth-panel {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/videogames.jpeg');
+    background-size: 100% 100%;
+    background-position: center center;
+
+        .fourth-box {
+            width: 20rem;
+            height: 7rem;
+            background-color: rgba(255, 255, 255, 0.3);
+
+                .fourth-text {
+                    color: white;
+                    font-weight: bold;
+                    text-align: center;
+
+                        h5 {
+                            padding-bottom: 2rem;
+                        }
+
+                        a {
+                            color: white;
+                        }
+                }
+        }
+}
+.fifth-panel {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/friends.jpeg');
+    background-size: 100% 100%;
+    background-position: center center;
+
+        .fifth-box {
+            width: 20rem;
+            height: 7rem;
+            background-color: rgba(255, 255, 255, 0.5);
+
+                .fifth-text {
+                    color: black;
+                    font-weight: bold;
+                    text-align: center;
+
+                            h5 {
+                                padding-bottom: 1rem;
+                            }
+
+                            a {
+                                color: white;
+                            }
+                }
+        }
+.sixth-panel {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/laptop.jpeg');
+    background-size: 100% 100%;
+    background-position: center center;
+
+        .sixth-box {
+            width: 20rem;
+            height: 7rem;
+            background-color: rgba(255, 255, 255, 0.5);
+
+                .sixth-text {
+                    color: black;
+                    font-weight: bold;
+                    text-align: center;
+
+                            h5 {
+                                padding-bottom: 1rem;
+                            }
+
+                            a {
+                                color: white;
+                            }
+                }
+        }
+}
+@media screen and (max-width: 576px ) {
+
+    .first-panel {
+        background-color: $blue;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 55vh;
+
+        .title {
+            color: #d3d3d3;
+            padding-left: 2rem;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+            padding-right: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .header {
+            padding-left: 1rem;
+
+                .description {
+                    color: #2f4f4f;
+                    font-size: 2.75rem;
+                }
+        }
+    }
+
+    .second-panel {
+        height: 35vh;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('/images/nightking.jpg');
+        background-size: 100% 100%;
+        background-position: center, center;
+        background-repeat: no-repeat;
+
+            .second-text {
+                text-align: center;
+                color: white;
+
+                    a {
+                        color: white;
+                    }
+            }
+    }
+    .third-panel {
+        height: 35vh;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('/images/news.jpeg');
+        background-size: 100% 100%;
+        background-position: center, center;
+
+            .third-box {
+                width: 10rem;
+                height: 5rem;
+                background-color: rgba(255, 255, 255, 0.7);
+
+                    .third-text {
+                        color: black;
+                        font-weight: bold;
+                        text-align: center;
+
+                            a {
+                                color: white;
+                            }
+                    }
+            }
+    }
+    .fourth-panel {
+        height: 35vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('/images/videogames.jpeg');
+        background-size: 100% 100%;
+        background-position: center center;
+
+            .fourth-box {
+                width: 12rem;
+                height: 5rem;
+                background-color: rgba(255, 255, 255, 0.3);
+
+                    .fourth-text {
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+
+                            a {
+                                color: white;
+                            }
+                    }
+            }
+    }
+    .fifth-panel {
+        height: 35vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('/images/friends.jpeg');
+        background-size: 100% 100%;
+        background-position: center center;
+
+            .fifth-box {
+                width: 20rem;
+                height: 5rem;
+                background-color: rgba(255, 255, 255, 0.5);
+
+                    .fifth-text {
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+
+                                a {
+                                    color: white;
+                                }
+                    }
+            }
+    }
+    .sixth-panel {
+        height: 35vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('/images/laptop.jpeg');
+        background-size: 100% 100%;
+        background-position: center center;
+
+            .sixth-box {
+                width: 10rem;
+                height: 5rem;
+                background-color: rgba(255, 255, 255, 0.5);
+
+                    .sixth-text {
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+
+                            a {
+                                color: white;
+                            }
+                    }
+            }
+    }
+}
