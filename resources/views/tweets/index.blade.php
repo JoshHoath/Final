@@ -12,6 +12,11 @@
             @foreach ($tweets as $tweet)
                 @include('tweets._tweet')
             @endforeach
+        <div class="container">
+            <section class="paginate">
+                {{ $tweets->links() }}
+            <section>
+        </div>
         </div>
     </div>
 @endsection

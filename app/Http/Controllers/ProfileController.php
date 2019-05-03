@@ -46,7 +46,7 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        $user = \App\User::find($id
+        $user = \App\User::find($id);
 
 
         return view('profiles.show' , ['user' => $user, 'tweets' => $user->tweets]);

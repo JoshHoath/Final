@@ -28,7 +28,7 @@ class TweetController extends Controller
 
         $tweets = \App\Tweet::with(['user'])
                             ->whereIn('id', $following)
-                            ->get();
+                            ->paginate(5);
 
         $user = Auth::user();
 
