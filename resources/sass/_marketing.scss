@@ -1,3 +1,18 @@
+
+
+.title-container {
+    width: 100%;
+    background-color: $blue;
+    margin: 0;
+}
+.title {
+    color: white;
+    padding-top: 1rem;
+    background-color: $blue;
+    margin: 0;
+    width: 100%
+}
+
 nav {
     border-bottom-style: solid;
     border-top-style: none;
@@ -338,4 +353,53 @@ nav {
             }
     }
 }
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background-color: $blue;
+        h1 {
+            font-size: 60px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-weight: 100%;
+            margin: 0;
+            text-transform: capitalize;
+            text-align: center;
+            padding: 20%;
+        }
+        h2 {
+            font-size: 30px;
+            color: white;
+        }
+}
+.page_container {
+    height: 25%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $blue;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: fill;
+        }
+}
+.page1 {
+    -webkit-background-size: cover;
+    height: 100%;
+}
+.page2 {
+    -webkit-background-size: cover;
+    height: 100%;
+}
+.page3 {
+    -webkit-background-size: cover;
+    height: 100%;
+}
+.page4 {
+    -webkit-background-size: cover;
+    height: 100%;
+
 }

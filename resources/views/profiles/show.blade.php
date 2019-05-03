@@ -11,10 +11,10 @@
             </h1>
             <div class="col-md-8 text-panel">
                 <ul>
-                    <li>Location: {{ $user->profile }}</li>
-                    <li>Bio: {{ $user->profile->bio }}</li>
-                    <li>Birthday: {{ $user->profile->birthday }}</li>
-                    <li>Website: {{ $user->profile->website }}</li>
+                    <li>Location: {{ $user->location }}</li>
+                    <li>Bio: {{ $user->bio }}</li>
+                    <li>Birthday: {{ $user->birthday }}</li>
+                    <li>Website: {{ $user->website }}</li>
                     <li>
                         <a href="/profiles/{{ $user->id }}/followers">Followers ({{ $user->followers()->count() }})</a>
                     </li>

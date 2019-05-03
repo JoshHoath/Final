@@ -13708,6 +13708,20 @@ a.text-dark:focus {
   }
 }
 
+.title-container {
+  width: 100%;
+  background-color: #3490dc;
+  margin: 0;
+}
+
+.title {
+  color: white;
+  padding-top: 1rem;
+  background-color: #3490dc;
+  margin: 0;
+  width: 100%;
+}
+
 nav {
   border-bottom-style: solid;
   border-top-style: none;
@@ -14030,33 +14044,37 @@ nav {
   .fifth-panel .fifth-panel .fifth-box .fifth-text a {
     color: white;
   }
+}
 
-  .fifth-panel .sixth-panel {
-    height: 35vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("/images/laptop.jpeg");
-    background-size: 100% 100%;
-    background-position: center center;
-  }
+.card {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: #DCDCDC;
+}
 
-  .fifth-panel .sixth-panel .sixth-box {
-    width: 10rem;
-    height: 5rem;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
+.text-panel ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.75rem;
+}
 
-  .fifth-panel .sixth-panel .sixth-box .sixth-text {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-  }
+.name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 
-  .fifth-panel .sixth-panel .sixth-box .sixth-text a {
-    color: white;
-  }
+.name {
+  font-size: 1rem;
+}
+
+.profile {
+  float: left;
+  display: inline;
+}
+
+.tweets {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navbar-laravel {

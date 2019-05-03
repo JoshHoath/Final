@@ -11,6 +11,7 @@
             <a class="navbar-brand" href="/register">Tweeter</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         </nav>
+
             <div id="app">
                 <section class="first-panel">
                     <div class="container">
