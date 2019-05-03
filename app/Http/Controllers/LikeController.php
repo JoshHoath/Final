@@ -23,16 +23,19 @@ class LikeController extends Controller
 
         if($like) {
             $like->delete();
-            return back();
+
         } else {
             $like = \App\Like::create([
                 'likeable_id'        => $id,
                 'likeable_type'      => $type,
                 'user_id'            => Auth::id()
             ]);
-            if($like) {
-                return back();
-            }
+
         }
+            if($like) {
+                return response()->json([
+                    'status'    => 'success',
+                ]);
+            }
     }
 }
