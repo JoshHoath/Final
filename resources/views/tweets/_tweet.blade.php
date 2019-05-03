@@ -12,7 +12,6 @@
                 :liked="{{ ( $tweet->isLiked ? '1' : '0' )}}"
                 :type="'tweet'"
                 :count="{{ $tweet->likes()->count() }}"
-
             ></like-button>
             <a href="/tweets/{{$tweet->id}}">Comment</a>
         </div>
