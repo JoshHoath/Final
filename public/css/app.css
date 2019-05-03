@@ -13708,25 +13708,297 @@ a.text-dark:focus {
   }
 }
 
-.tps-section {
-  height: 50vh;
-}
-
-#title {
-  color: white;
-  padding-top: 1rem;
-}
-
-#marketing-app {
-  background-color: #3490dc;
-}
-
 nav {
   border-bottom-style: solid;
   border-top-style: none;
   border-left-style: none;
   border-right-style: none;
   border-width: 1px;
+}
+
+.first-panel {
+  background-color: #3490dc;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 60vh;
+}
+
+.first-panel .title {
+  color: #d3d3d3;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  padding-right: 2rem;
+  font-size: 1.5rem;
+}
+
+.first-panel .header {
+  padding-left: 1rem;
+}
+
+.first-panel .header .description {
+  color: #2f4f4f;
+  font-size: 2.75rem;
+}
+
+.second-panel {
+  height: 70vh;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/nightking.jpg");
+  background-size: 100% 100%;
+  background-position: center, center;
+  background-repeat: no-repeat;
+}
+
+.second-panel .second-text {
+  text-align: center;
+  color: white;
+}
+
+.second-panel .second-text h5 {
+  padding-bottom: 1.5rem;
+}
+
+.second-panel .second-text a {
+  color: white;
+}
+
+.third-panel {
+  height: 70vh;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/news.jpeg");
+  background-size: 100% 100%;
+  background-position: center, center;
+}
+
+.third-panel .third-box {
+  width: 20rem;
+  height: 7rem;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.third-panel .third-box .third-text {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.third-panel .third-box .third-text h5 {
+  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+}
+
+.third-panel .third-box .third-text a {
+  color: white;
+}
+
+.fourth-panel {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/videogames.jpeg");
+  background-size: 100% 100%;
+  background-position: center center;
+}
+
+.fourth-panel .fourth-box {
+  width: 20rem;
+  height: 7rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.fourth-panel .fourth-box .fourth-text {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fourth-panel .fourth-box .fourth-text h5 {
+  padding-bottom: 2rem;
+}
+
+.fourth-panel .fourth-box .fourth-text a {
+  color: white;
+}
+
+.fifth-panel {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/friends.jpeg");
+  background-size: 100% 100%;
+  background-position: center center;
+}
+
+.fifth-panel .fifth-box {
+  width: 20rem;
+  height: 7rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.fifth-panel .fifth-box .fifth-text {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fifth-panel .fifth-box .fifth-text h5 {
+  padding-bottom: 1rem;
+}
+
+.fifth-panel .fifth-box .fifth-text a {
+  color: white;
+}
+
+@media screen and (max-width: 576px) {
+  .first-panel {
+    background-color: #3490dc;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 55vh;
+  }
+
+  .first-panel .title {
+    color: #d3d3d3;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    padding-right: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .first-panel .header {
+    padding-left: 1rem;
+  }
+
+  .first-panel .header .description {
+    color: #2f4f4f;
+    font-size: 2.75rem;
+  }
+
+  .second-panel {
+    height: 35vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/nightking.jpg");
+    background-size: 100% 100%;
+    background-position: center, center;
+    background-repeat: no-repeat;
+  }
+
+  .second-panel .second-text {
+    text-align: center;
+    color: white;
+  }
+
+  .second-panel .second-text a {
+    color: white;
+  }
+
+  .third-panel {
+    height: 35vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/news.jpeg");
+    background-size: 100% 100%;
+    background-position: center, center;
+  }
+
+  .third-panel .third-box {
+    width: 10rem;
+    height: 5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .third-panel .third-box .third-text {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .third-panel .third-box .third-text a {
+    color: white;
+  }
+
+  .fourth-panel {
+    height: 35vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/videogames.jpeg");
+    background-size: 100% 100%;
+    background-position: center center;
+  }
+
+  .fourth-panel .fourth-box {
+    width: 12rem;
+    height: 5rem;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .fourth-panel .fourth-box .fourth-text {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .fourth-panel .fourth-box .fourth-text a {
+    color: white;
+  }
+
+  .fifth-panel {
+    height: 35vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/friends.jpeg");
+    background-size: 100% 100%;
+    background-position: center center;
+  }
+
+  .fifth-panel .fifth-box {
+    width: 20rem;
+    height: 5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .fifth-panel .fifth-box .fifth-text {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .fifth-panel .fifth-box .fifth-text a {
+    color: white;
+  }
 }
 
 .navbar-laravel {

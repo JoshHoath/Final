@@ -1787,6 +1787,96 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GiphyComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GiphyComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      criteria: null,
+      apiKey: 'alQax0m0WH4PSot4je6T0EP7aUHjRqWD',
+      limit: 10,
+      gifs: [],
+      dropdownOpen: false,
+      selectedGif: ''
+    };
+  },
+  methods: {
+    getGifs: function getGifs() {
+      var _this = this;
+
+      if (!this.criteria) {
+        return false;
+      }
+
+      console.log(this.critera);
+      this.gifs = [], this.dropdownOpen = false;
+      axios.get('https://api.giphy.com/v1/gifs/search?q=' + this.criteria + '&api_key=' + this.apiKey + '&limit=' + this.limit).then(function (response) {
+        _this.loadGifs(response.data.data);
+
+        console.log(response);
+      });
+    },
+    loadGifs: function loadGifs(data) {
+      this.gifs = data;
+      this.dropdownOpen = true;
+    },
+    selectGif: function selectGif(gif) {
+      console.log(gif);
+      this.selectedGif = gif.fixed_height.url;
+      this.dropdownOpen = false;
+    },
+    doFocus: function doFocus() {
+      if (this.criteria) this.dropdownOpen = true;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/LikeButton.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/LikeButton.vue?vue&type=script&lang=js& ***!
@@ -36911,6 +37001,127 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GiphyComponent.vue?vue&type=template&id=49c6faee&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GiphyComponent.vue?vue&type=template&id=49c6faee& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "search-bar" }, [
+    _c("div", { staticClass: "input-group" }, [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Search Gifs")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.criteria,
+            expression: "criteria"
+          }
+        ],
+        attrs: { type: "text", placeholder: "Search for GIFs" },
+        domProps: { value: _vm.criteria },
+        on: {
+          keyup: function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.getGifs($event)
+          },
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.criteria = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("button", { staticClass: "button", on: { click: _vm.getGifs } }, [
+        _vm._v("Search")
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "dropdown" }, [
+      _c(
+        "div",
+        { staticClass: "dropdown-menu", class: { show: _vm.dropdownOpen } },
+        _vm._l(_vm.gifs, function(gif) {
+          return _c(
+            "a",
+            {
+              staticClass: "dropdown-item",
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.selectGif(gif.images)
+                }
+              }
+            },
+            [_c("img", { attrs: { src: gif.images.fixed_width.url } })]
+          )
+        }),
+        0
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.selectedGif,
+            expression: "selectedGif"
+          }
+        ],
+        staticClass: "card selectedGifPreview"
+      },
+      [
+        _c("div", { staticClass: "card-body" }, [
+          _c("img", { attrs: { src: _vm.selectedGif } }),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "btn btn-sm btn-danger",
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  _vm.selectedGif = ""
+                }
+              }
+            },
+            [_vm._v("x")]
+          )
+        ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/LikeButton.vue?vue&type=template&id=2a9c25d4&":
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/LikeButton.vue?vue&type=template&id=2a9c25d4& ***!
@@ -49120,6 +49331,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('like-button', __webpack_require__(/*! ./components/LikeButton.vue */ "./resources/js/components/LikeButton.vue").default);
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
+Vue.component('gif-search', __webpack_require__(/*! ./components/GiphyComponent.vue */ "./resources/js/components/GiphyComponent.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49259,6 +49471,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/GiphyComponent.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/GiphyComponent.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GiphyComponent_vue_vue_type_template_id_49c6faee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GiphyComponent.vue?vue&type=template&id=49c6faee& */ "./resources/js/components/GiphyComponent.vue?vue&type=template&id=49c6faee&");
+/* harmony import */ var _GiphyComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GiphyComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/GiphyComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GiphyComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GiphyComponent_vue_vue_type_template_id_49c6faee___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GiphyComponent_vue_vue_type_template_id_49c6faee___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/GiphyComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/GiphyComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/GiphyComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GiphyComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./GiphyComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GiphyComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GiphyComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/GiphyComponent.vue?vue&type=template&id=49c6faee&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/GiphyComponent.vue?vue&type=template&id=49c6faee& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GiphyComponent_vue_vue_type_template_id_49c6faee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./GiphyComponent.vue?vue&type=template&id=49c6faee& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GiphyComponent.vue?vue&type=template&id=49c6faee&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GiphyComponent_vue_vue_type_template_id_49c6faee___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GiphyComponent_vue_vue_type_template_id_49c6faee___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/LikeButton.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/LikeButton.vue ***!
@@ -49335,7 +49616,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/lib/loader.js):\n\r\n}\r\n^\r\n      Expected \"}\".\n    ╷\n340 │ }\r\n    │  ^\n    ╵\n  resources\\sass\\_marketing.scss 340:2  root stylesheet\n  stdin 12:9                            root stylesheet\r\n      in C:\\Unit-003\\Projects\\josh-tweeter\\resources\\sass\\_marketing.scss (line 340, column 2)\n    at runLoaders (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\webpack\\lib\\NormalModule.js:301:20)\n    at C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at render (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass-loader\\lib\\loader.js:52:13)\n    at Function.$2 (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:24354:48)\n    at wO.$2 (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:15295:15)\n    at uP.vq (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:9034:42)\n    at uP.vp (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:9036:32)\n    at iy.uC (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8384:46)\n    at uo.$0 (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8526:7)\n    at Object.eG (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:1512:80)\n    at ad.ba (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8447:3)\n    at iM.ba (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8377:25)\n    at iM.cv (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8364:6)\n    at pu.cv (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8154:35)\n    at Object.m (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:1383:19)\n    at C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:5066:51\n    at xe.a (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:1394:71)\n    at xe.$2 (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8169:23)\n    at vR.$2 (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8164:25)\n    at uP.vq (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:9034:42)\n    at uP.vp (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:9036:32)\n    at iy.uC (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8384:46)\n    at uo.$0 (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8526:7)\n    at Object.eG (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:1512:80)\n    at ad.ba (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8447:3)\n    at iM.ba (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8377:25)\n    at iM.cv (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8364:6)\n    at Object.eval (eval at CJ (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:648:15), <anonymous>:3:37)\n    at uP.vq (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:9034:42)\n    at uP.vp (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:9036:32)\n    at iy.uC (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8384:46)\n    at uo.$0 (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8526:7)\n    at Object.eG (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:1512:80)\n    at ad.ba (C:\\Unit-003\\Projects\\josh-tweeter\\node_modules\\sass\\sass.dart.js:8447:3)");
 
 /***/ }),
 
