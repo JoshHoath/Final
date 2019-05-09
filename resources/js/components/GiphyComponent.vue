@@ -1,15 +1,15 @@
 <template>
     <div class="search-bar">
         <div class="input-group">
-            <h1 class="text-center">Search Gifs</h1>
-            <form @submit.prevent="getGifs"
+
                 <input type="text"
                 @keyup.enter="getGifs"
                 v-model="criteria"
                 placeholder="Search for GIFs"
                 />
-                <button class="button" @click="getGifs">Search</button>
-            </form>
+                <button type="button" class="btn btn-success" @click.prevent="getGifs">Search</button>
+
+            <input type="hidden" v-model="selectedGif"/>
         </div>
         <div class="dropdown">
             <div class="dropdown-menu" :class="{ 'show' : dropdownOpen }">
@@ -40,7 +40,7 @@
         data () {
             return {
                 criteria: null,
-                apiKey: 'alQax0m0WH4PSot4je6T0EP7aUHjRqWD',
+                apiKey: 'n5fMNDU27YfiZbJExcTeYO7vI1p2euk4',
                 limit: 10,
                 gifs: [],
                 dropdownOpen: false,

@@ -1837,7 +1837,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       criteria: null,
-      apiKey: 'alQax0m0WH4PSot4je6T0EP7aUHjRqWD',
+      apiKey: 'n5fMNDU27YfiZbJExcTeYO7vI1p2euk4',
       limit: 10,
       gifs: [],
       dropdownOpen: false,
@@ -37018,8 +37018,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "search-bar" }, [
     _c("div", { staticClass: "input-group" }, [
-      _c("h1", { staticClass: "text-center" }, [_vm._v("Search Gifs")]),
-      _vm._v(" "),
       _c("input", {
         directives: [
           {
@@ -37050,9 +37048,41 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("button", { staticClass: "button", on: { click: _vm.getGifs } }, [
-        _vm._v("Search")
-      ])
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-success",
+          attrs: { type: "button" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.getGifs($event)
+            }
+          }
+        },
+        [_vm._v("Search")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.selectedGif,
+            expression: "selectedGif"
+          }
+        ],
+        attrs: { type: "hidden" },
+        domProps: { value: _vm.selectedGif },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.selectedGif = $event.target.value
+          }
+        }
+      })
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "dropdown" }, [
@@ -49382,13 +49412,8 @@ window.axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('m
  * a simple convenience so we don't have to attach every token manually.
  */
 
-var token = document.head.querySelector('meta[name="csrf-token"]');
+var token = document.head.querySelector('meta[name="csrf-token"]'); //
 
-if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

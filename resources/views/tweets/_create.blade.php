@@ -6,7 +6,7 @@
             <textarea name="body"  class="form-control" placeholder="Let's see how funny you think you are"></textarea>
         </div>
         <gif-search>
-
+            
         </gif-search>
         <div class="text-right">
             <button class="btn btn-primary" type="submit">Tweet</button>

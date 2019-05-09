@@ -51,14 +51,6 @@
                         </section>
                     </section>
                 </section>
-                <section class="sixth-panel aos-item" data-aos="zoom-in-right">
-                    <section class="sixth-box">
-                        <section class="sixth-text">
-                            <h5>Come get started</h5>
-                            <button class="btn btn-primary"><a href="/register">Sign Up!</a></button>
-                        </section>
-                    </section>
-                </section>
             </div>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="js/app.js"></script>

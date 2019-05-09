@@ -58,6 +58,7 @@ class TweetController extends Controller
      */
     public function store(Request $request)
     {
+        
         $data = $request->validate([
             'body'      =>  'min:2|max:280'
         ]);
@@ -69,6 +70,7 @@ class TweetController extends Controller
         } else {
             return back();
         }
+
     }
 
     /**
