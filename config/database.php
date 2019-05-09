@@ -1,5 +1,7 @@
 <?php
 
+    $DATABASE_URL=parse_url('http://localhost');
+
 return [
 
     /*
