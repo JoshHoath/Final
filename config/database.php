@@ -1,6 +1,6 @@
 <?php
 
-    $DATABASE_URL=parse_url('http://localhost');
+    $DATABASE_URL=parse_url('postgres://eplqhexndsyysp:9a0e51bb23074c6a68f7e85d934ab2dca1c394e');
 
 return [
 
