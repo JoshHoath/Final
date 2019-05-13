@@ -58,7 +58,7 @@ class TweetController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //save tweet
         $data = $request->validate([
             'body'      =>  'min:2|max:280'
         ]);

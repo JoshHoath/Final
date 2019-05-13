@@ -44,7 +44,6 @@ Route::get('/marketing', function() {
 });
 
 Auth::routes();
-Route::porst('/send', 'EmailController@send');
 Route::get('/logout', function(){
     auth()->logout();
     return redirect('/login');
