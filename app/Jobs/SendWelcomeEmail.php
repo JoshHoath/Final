@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Mail;
-Use App\Mail\WelcomeEmail;
+use App\Mail\WelcomeEmail;
 
 class SendWelcomeEmail implements ShouldQueue
 {

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -74,11 +74,13 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         //validation
         $request->validate([
             'location'      => 'required|max:20',
             'birthday'      => 'required|date',
-            'bio'           => 'max:200'
+            'bio'           => 'max:200',
+            'avatar'        => 'image|mimes:jpeg,jpg,png,gif|max:2048'
         ]);
 
         $user = \App\User::find($id);
@@ -88,6 +90,26 @@ class ProfileController extends Controller
         $profile->website  = $request->website;
         $profile->bio      = $request->bio;
         $profile->birthday = $request->birthday;
+
+
+
+        //avatar upload
+        if($request->file('avatar')) {
+            // assign for easy access
+            $image = $request->file('avatar');
+            //generate unique id and file extension
+            $new_name = uniqid() . '.' . $image->getClientOriginalExtension();
+            //store image in amazon s3
+
+            Storage::disk('s3')->put('/avatars/'. $id . '/' . $new_name, file_get_contents($image), 'public');
+
+            //save image path to profile object
+            $profile->avatar = $new_name;
+        } else {
+            // no file upload gets nullifide
+            $profile->avatar = null;
+        }
+
 
         if($profile->save()) {
             return redirect('/profiles/' . $id);
