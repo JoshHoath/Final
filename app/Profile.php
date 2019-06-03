@@ -11,4 +11,8 @@ class Profile extends Model
     public function user() {
         return $this->belongsTo('App\User');
     }
+    public function avatar() {
+        return $this->hasOne('App\Avatar');
+    }
+
 }

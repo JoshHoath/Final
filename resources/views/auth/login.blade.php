@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="right-bar">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="login-form">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -70,4 +70,10 @@
         </div>
     </div>
 </div>
+<div class="left-bar">
+    <div class="decription">
+        <h2>Start your journey</h2>
+    </div>
+</div>
+
 @endsection

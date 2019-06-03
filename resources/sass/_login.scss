@@ -1,0 +1,19 @@
+.left-bar {
+    height: 100vh;
+    width: 30%;
+    float: left;
+    background-color: #3490dc;
+    color: white;
+    padding-top: 30vh;
+        h2 {
+            text-align: center;
+        }
+}
+.right-bar {
+    height: 100vh;
+    width: 70%;
+    float: right;
+}
+.login-form {
+    width: 90%;
+}

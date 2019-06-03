@@ -69,4 +69,7 @@ class User extends Authenticatable
     public function getFollowingUserAttribute() {
         return $this->followers()->where('follower_id', Auth::id())->count();
     }
+    public function avatar() {
+        return $this->hasOne('App\Avatar');
+    }
 }
